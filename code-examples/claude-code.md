@@ -29,7 +29,7 @@ Get your key at [build.nvidia.com](https://build.nvidia.com/settings/api-keys). 
 ### OpenRouter (Anthropic-compatible API)
 
 Claude Code works via OpenRouter's Anthropic-compatible API.
-Note: only paid Anthropic Claude models are supported (e.g. `claude-sonnet-4.6`, `claude-opus-4`). Browse available Claude models at [openrouter.ai/models?q=anthropic](https://openrouter.ai/models?q=anthropic).
+Browse available Claude models at [openrouter.ai/models?q=anthropic](https://openrouter.ai/models?q=anthropic).
 
 ```bash
 # Add to ~/.zshrc or ~/.bashrc
