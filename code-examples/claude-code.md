@@ -26,14 +26,24 @@ export ANTHROPIC_AUTH_TOKEN="nvapi-your_nvidia_key"
 
 Get your key at [build.nvidia.com](https://build.nvidia.com/settings/api-keys). Recommended model: `meta/llama-3.3-70b-instruct`, `deepseek-ai/deepseek-r1`.
 
-### OpenRouter (35+ free models, single key)
+### OpenRouter (Anthropic-compatible API)
+
+Claude Code works via OpenRouter's Anthropic-compatible API.
+Note: only paid Anthropic Claude models are supported (e.g. `claude-sonnet-4.6`, `claude-opus-4`). Browse available Claude models at [openrouter.ai/models?q=anthropic](https://openrouter.ai/models?q=anthropic).
 
 ```bash
-export ANTHROPIC_BASE_URL="https://openrouter.ai/api/v1"
-export ANTHROPIC_AUTH_TOKEN="sk-or-v1-your_openrouter_key"
-```
+# Add to ~/.zshrc or ~/.bashrc
+export OPENROUTER_API_KEY="<your-openrouter-api-key>"  # Get at https://openrouter.ai/settings/keys
+export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
+export ANTHROPIC_AUTH_TOKEN="$OPENROUTER_API_KEY"
+export ANTHROPIC_API_KEY=""  # Must be explicitly empty to avoid conflicts
 
-Get your key at [openrouter.ai/keys](https://openrouter.ai/workspaces/default/keys). Recommended model: `openai/gpt-oss-120b:free`, `google/gemini-2.5-flash:free`.
+# Optional: pin specific models for each role
+# export ANTHROPIC_DEFAULT_SONNET_MODEL="anthropic/claude-sonnet-4.6"
+# export ANTHROPIC_DEFAULT_HAIKU_MODEL="anthropic/claude-haiku-4.5"
+
+# Then simply run: claude
+```
 
 ### Cloudflare Workers AI (10K requests/day free)
 
